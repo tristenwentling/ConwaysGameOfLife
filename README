@@ -14,5 +14,5 @@ Planned modifications:
 
 2.    Add an optional gui frontend
 
-3.    Convert to either full numpy cython for speedup        
+3.    Convert to either full numpy or cython for speedup        
      
