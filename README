@@ -1,0 +1,18 @@
+This is just a weekend project of mine, I wanted to work on an implementation of Conway's Game of Life.
+
+I wanted to create it for fun, as an interesting exercise.
+
+To run it, just call conways.py from the command line.  If you want to modify the number of iterations run, the batch size, or the interval between plotting, then modify the params.txt file accordingly. 
+
+The number of batches will update itself to the total number of iterations divided by the number of batches.  It will return a representation in the command line and in a window with black and white pixel representations. 
+
+Hope you think it's as fun as I did!
+
+Planned modifications:
+1.    Animate the progression of the frames, probably using the animation
+      functionality in matplotlib
+
+2.    Add an optional gui frontend
+
+3.    Convert to either full numpy cython for speedup        
+     
