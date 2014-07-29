@@ -8,7 +8,8 @@ def main():
     xx.show()
     grid = xx.get_board_state()
     graph_show(grid)
-    print "========================================================"
+    brick = ["^" for i in xrange(30)]
+    print brick
     for i in xrange(xx._num_batches):
         for j in xrange(xx._batch_size):
             try:
@@ -20,8 +21,8 @@ def main():
                     f.write(row)
                 f.close()
 
-            xx.show()
-            grid = xx.get_board_state()
-            graph_show(grid)
-
+        xx.show()
+        grid = xx.get_board_state()
+        graph_show(grid)
+        print brick
 main()

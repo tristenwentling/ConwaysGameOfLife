@@ -11,8 +11,8 @@ class LifeGame(Board):
         self._iternum = 100  # updateable option
         self._sidelen = num  # updateable option
         self._size = num**2
-        self._step_size = None  # updateable option
-        self._batch_size = None  # updateable option
+        self._step_size = 1  # updateable option
+        self._batch_size = 0  # updateable option
         self._num_batches = 1  # will be set if set_params is run later
         self.board = []
         if set_params:
@@ -111,4 +111,4 @@ class LifeGame(Board):
         self._batch_size = int(params[1])
         self._sidelen = int(params[2])
         self._step_size = int(params[3])
-        self._num_batches = (self._iternum/self._batch_size)+1
+        self._num_batches = int(self._iternum/self._batch_size)+1
