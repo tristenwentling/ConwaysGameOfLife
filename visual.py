@@ -1,4 +1,4 @@
-from images import Image
+from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import animation
@@ -6,13 +6,13 @@ from matplotlib import animation
 def graph_show(grid):
     """shows a graphical version of the board"""
     side = len(grid)
-    image = Image(side*3, side*3)
+    image = Image.new('RGB',(side*3, side*3))
     #  pix_dead = (000, 000, 000)  # black
     #  pix_live = (073, 172, 057)  # green
     pix_dead = (255, 255, 255)  # white
     pix_live = (000, 000, 000)  # black
-    for i in xrange(side):
-        for j in xrange(side):
+    for i in range(side):
+        for j in range(side):
             tup = grid[i][j][0]
             a = i * 3
             b = a + 1
@@ -21,12 +21,12 @@ def graph_show(grid):
             e = d + 1
             f = e + 1
             if tup == 1:
-                image.setPixel(a, d, pix_live)
-                image.setPixel(b, e, pix_live)
-                image.setPixel(c, f, pix_live)
+                image.putpixel((a, d), pix_live)
+                image.putpixel((b, e), pix_live)
+                image.putpixel((c, f), pix_live)
             else:
-                image.setPixel(a, d, pix_dead)
-                image.setPixel(b, e, pix_dead)
-                image.setPixel(c, f, pix_dead)
+                image.putpixel((a, d), pix_dead)
+                image.putpixel((b, e), pix_dead)
+                image.putpixel((c, f), pix_dead)
     image.save("newimage2.gif")
-    image.draw()
+    image.show()

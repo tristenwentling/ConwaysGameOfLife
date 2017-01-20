@@ -6,12 +6,12 @@ def main():
     """runs my version of Conway's Game of Life"""
     xx = LifeGame()
     xx.show()
-    grid = xx.get_board_state()
-    graph_show(grid)
-    brick = ["^" for i in range(30)]
-    print(brick)
-    for i in range(xx._num_batches):
-        for j in range(xx._batch_size):
+    #grid = xx.get_board_state()
+    #graph_show(grid)
+    brick = ["^" for i in xrange(30)]
+    print brick
+    for i in xrange(xx._num_batches):
+        for j in xrange(xx._batch_size):
             try:
                 xx.run_game()
             except KeyboardInterrupt:
@@ -22,7 +22,7 @@ def main():
                 f.close()
                 raise
         xx.show()
-        grid = xx.get_board_state()
-        graph_show(grid)
-        print(brick)
+        #grid = xx.get_board_state()
+        #graph_show(grid)
+        print brick
 main()
